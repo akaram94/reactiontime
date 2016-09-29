@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Reaction Time</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Reaction Time Tester</h1>
+        </header>
+        
+        <canvas id="theCanvas">
+        </canvas>
+        
+        <p>To start, click on the orange box above. It will then turn red, and at some point afterwards, will turn green. You then must click on the box as quickly as possible.</p>
+        
+        <div id="buttons">
+            <button id="normal" type="button">Normal View</button>
+            <button id="night" type="button">Night View</button>
+        </div>
+        
+        <section id="attempts">
+            <h1>Attempts</h1>
+            <p id="average"></p>
+        </section>
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://raw.githubusercontent.com/caleb531/jcanvas/master/jcanvas.min.js"></script>
+        <script src="js/default.js"></script>
+    </body>
+</html>
