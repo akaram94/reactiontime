@@ -14,6 +14,10 @@ $(document).ready(function(){
     var average = 0;
     var sum = 0;
     
+    if($.jCookie('userViewMode') == 'night'){
+        $('link[href="css/styles.css"]').attr('href','css/night.css');
+    }
+    
     function goOrange(){
        ctx.beginPath();
        ctx.rect(0, 0, 400, 400);
@@ -85,10 +89,12 @@ $(document).ready(function(){
     
     $('#night').click(function (){
         $('link[href="css/styles.css"]').attr('href','css/night.css');
+        $.jCookie('userViewMode', 'night');
     });
     
     $('#normal').click(function (){
         $('link[href="css/night.css"]').attr('href','css/styles.css');
+        $.jCookie('userViewMode', 'normal');
     });
     
 });
