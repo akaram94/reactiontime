@@ -14,6 +14,8 @@ $(document).ready(function(){
     var average = 0;
     var sum = 0;
     
+    var timeoutID;
+    
     if($.jCookie('userViewMode') == 'night'){
         $('link[href="css/styles.css"]').attr('href','css/night.css');
     }
@@ -60,7 +62,7 @@ $(document).ready(function(){
         if(orange == true && green == false && red == false){
             goRed();
             time = Math.floor((Math.random() * 3000) + 3000);
-            setTimeout(goGreen, time);
+            timeoutID = setTimeout(goGreen, time);
             greenTime = Date.now();
         }
         
@@ -73,6 +75,7 @@ $(document).ready(function(){
                 sum = sum + scores[i];
             }
             average = sum/scores.length;
+            average = Math.round(average * 100) / 100
             sum = 0;
             $('#average').text("Average: " + average + "ms");
             $('#attempts').append('<p>' + scores.length + ') ' + pressTime + 'ms</p>')
@@ -81,6 +84,7 @@ $(document).ready(function(){
         }
                 
         else if(red == true && green == false && orange == false){
+            clearTimeout(timeoutID);
             goOrange();
             alert("You pressed too early.");
             resetTimes();

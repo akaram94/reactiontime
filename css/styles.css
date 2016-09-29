@@ -26,7 +26,7 @@ body{
 
 header{
     text-align: center;
-    font-size: 48px;
+    font-size: 2.75em;
     font-weight: bold;
     margin: 20px;
 }
@@ -50,7 +50,7 @@ p{
 
 section>h1{
     text-align: center;
-    font-size: 48px;
+    font-size: 2.75em;
     font-weight: bold;
     margin: 20px;
 }
