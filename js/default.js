@@ -58,7 +58,7 @@ $(document).ready(function(){
     
     goOrange();
     
-    $("#theCanvas").click(function() {
+    $("#theCanvas").mousedown(function() {
         if(orange == true && green == false && red == false){
             goRed();
             time = Math.floor((Math.random() * 3000) + 3000);
